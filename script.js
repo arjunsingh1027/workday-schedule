@@ -39,7 +39,7 @@ for (const property in workday) {
 $("button").click(function () {
     value = $(this).siblings("textarea").val();
     hourString = $(this).siblings("div").text();
-
+    
     saveSchedule(hourString, value);
 });
 
@@ -57,6 +57,8 @@ function hourNumberFromString(hourString) {
     }
 };
 
+
+// saving to local storage
 function loadCorrectDataset() {
     result = localStorage.getItem("workday")
     return (result ? result : workday);
@@ -87,4 +89,3 @@ function updateCalTasks(dayObject) {
         $(this).children("textarea").text(dayObject[res.text()]);
     })
 };
-
